@@ -1,5 +1,5 @@
 {
-  "name": "kisshub_spider",
+  "name": "script-jsx-template",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -7,7 +7,7 @@
     "lint": "npx eslint --ext .jsx,.js,.ts,.tsx src/",
     "build": "rollup -c --bundleConfigAsCjs",
     "build:preact": "cross-env FRAME_WORK=preact rollup -c --bundleConfigAsCjs",
-    "build:light": "cross-env FRAME_WORK=domchef rollup -c --bundleConfigAsCjs"
+    "build:domchef": "cross-env FRAME_WORK=domchef rollup -c --bundleConfigAsCjs"
   },
   "author": "",
   "license": "ISC",
