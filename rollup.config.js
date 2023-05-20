@@ -6,6 +6,8 @@ import alias from '@rollup/plugin-alias';
 import replace from '@rollup/plugin-replace';
 import cleaner from 'rollup-plugin-cleaner';
 import frameConfig from './frameconfig.js';
+import postcss from 'rollup-plugin-postcss';
+import cssnano from 'cssnano';
 
 export default {
     input: 'src/main.tsx',
@@ -33,6 +35,14 @@ export default {
             entries: [...frameConfig.rollupAlias],
         }),
         babel({ babelHelpers: 'bundled', extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts', '.tsx'] }),
+        postcss({
+            // modules: true,
+            plugins: [
+                cssnano({
+                    preset: 'default',
+                }),
+            ],
+        }),
         cleaner({
             targets: ['./dist/'],
         }),
