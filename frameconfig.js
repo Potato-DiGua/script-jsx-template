@@ -30,4 +30,4 @@ if (!supportFrames.includes(frameWork)) {
     throw new Error(`not support ${frameWork},frameWork only support ${supportFrames.join(', ')}`);
 }
 
-module.exports = config[frameWork];
+export default config[frameWork];

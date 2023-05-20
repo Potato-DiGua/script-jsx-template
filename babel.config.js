@@ -1,21 +1,15 @@
-const frameConfig = require('./frameconfig');
+import frameConfig from './frameconfig.js';
 
-module.exports = {
+export default {
     presets: [
         [
             '@babel/preset-env',
             {
-                targets: {
-                    edge: '17',
-                    firefox: '60',
-                    chrome: '67',
-                    safari: '11.1',
-                },
                 useBuiltIns: 'usage',
-                corejs: '3.6.5',
+                corejs: '3.30',
             },
         ],
-        '@babel/preset-typescript',
         ['@babel/preset-react', frameConfig.reactBabelConfig],
+        '@babel/preset-typescript',
     ],
 };
